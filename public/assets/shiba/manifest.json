@@ -1,0 +1,273 @@
+{
+  "character": "贱柴",
+  "version": 1,
+  "format": "PNG RGBA",
+  "activeStyle": "flat-cartoon-v1",
+  "activeSpriteDirectory": "sprites/cartoon-v1",
+  "canvas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "transitions": {
+    "directory": "sprites/cartoon-v1/transitions",
+    "frameIntervalMs": 88,
+    "reversible": true,
+    "clips": [
+      {
+        "from": "idle",
+        "to": "sitting",
+        "frames": 4,
+        "pattern": "stand-to-sit-0N.png"
+      },
+      {
+        "from": "sitting",
+        "to": "play-dead",
+        "frames": 4,
+        "pattern": "sit-to-prone-0N.png"
+      },
+      {
+        "from": "play-dead",
+        "to": "belly-up",
+        "frames": 4,
+        "pattern": "prone-to-belly-0N.png"
+      }
+    ]
+  },
+  "locomotion": {
+    "directory": "sprites/cartoon-v1/locomotion-v1",
+    "frameIntervalMs": 64,
+    "baseFacing": "left",
+    "clips": [
+      {
+        "name": "start-walk",
+        "frames": 5,
+        "pattern": "start-walk-0N.png"
+      },
+      {
+        "name": "accelerate-run",
+        "frames": 5,
+        "pattern": "accelerate-run-0N.png"
+      },
+      {
+        "name": "brake-stop",
+        "frames": 5,
+        "pattern": "brake-stop-0N.png"
+      }
+    ]
+  },
+  "liftAndFall": {
+    "directory": "sprites/cartoon-v1/lift-v1",
+    "totalFrames": 36,
+    "clips": [
+      {
+        "name": "pose-to-lift",
+        "variants": ["stand", "sit", "prone", "belly"],
+        "framesPerVariant": 4
+      },
+      {
+        "name": "lift-loop",
+        "variants": ["body", "scruff"],
+        "framesPerVariant": 5
+      },
+      {
+        "name": "fall",
+        "frames": 5,
+        "loop": false
+      },
+      {
+        "name": "impact-recover",
+        "frames": 5,
+        "loop": false
+      }
+    ]
+  },
+  "idleTransitions": {
+    "directory": "sprites/cartoon-v1/idle-transitions-v1",
+    "totalFrames": 20,
+    "frameIntervalMs": 88,
+    "reversible": true,
+    "clips": [
+      {
+        "from": "sitting",
+        "to": "back-side-eye",
+        "frames": 4,
+        "pattern": "sit-to-back-look-0N.png"
+      },
+      {
+        "from": "sitting",
+        "to": "lick-paw",
+        "frames": 4,
+        "pattern": "sit-to-lick-paw-0N.png"
+      },
+      {
+        "from": "sitting",
+        "to": "scratch-ear",
+        "frames": 4,
+        "pattern": "sit-to-scratch-ear-0N.png"
+      },
+      {
+        "from": "chin-rest",
+        "to": "tail-sleep",
+        "frames": 4,
+        "pattern": "prone-to-tail-sleep-0N.png"
+      },
+      {
+        "from": "chin-rest",
+        "to": "play-dead",
+        "frames": 4,
+        "pattern": "prone-to-play-dead-0N.png"
+      }
+    ]
+  },
+  "idleLoops": {
+    "scratchEar": {
+      "directory": "sprites/cartoon-v1/scratch-ear-v1",
+      "frames": 4,
+      "frameIntervalMs": 105,
+      "durationMs": {
+        "min": 3000,
+        "max": 5000
+      },
+      "pattern": "scratch-ear-loop-0N.png",
+      "entry": "idle-transitions-v1/sit-to-scratch-ear-0N.png",
+      "exit": "reverse(entry)"
+    }
+  },
+  "assets": [
+    {
+      "state": "idle",
+      "file": "01-idle.png",
+      "description": "默认站立待机"
+    },
+    {
+      "state": "walk_right",
+      "file": "02-walk-right.png",
+      "description": "向右迈步；向左时水平翻转"
+    },
+    {
+      "state": "lifted",
+      "file": "03-lifted.png",
+      "description": "被鼠标拎起、四肢悬空"
+    },
+    {
+      "state": "sitting_side_eye",
+      "file": "04-sitting-side-eye.png",
+      "description": "坐下并斜眼观察主人"
+    },
+    {
+      "state": "play_dead",
+      "file": "05-play-dead.png",
+      "description": "趴下装死并偷偷睁眼"
+    },
+    {
+      "state": "belly_up",
+      "file": "06-belly-up.png",
+      "description": "四脚朝天"
+    },
+    {
+      "state": "walk_contact",
+      "file": "v2/07-walk-contact.png",
+      "description": "小碎步接触帧 1"
+    },
+    {
+      "state": "walk_passing",
+      "file": "v2/08-walk-passing.png",
+      "description": "小碎步交替帧 2"
+    },
+    {
+      "state": "walk_opposite_contact",
+      "file": "v2/09-walk-opposite-contact.png",
+      "description": "小碎步接触帧 3"
+    },
+    {
+      "state": "walk_opposite_passing",
+      "file": "v2/10-walk-opposite-passing.png",
+      "description": "小碎步交替帧 4"
+    },
+    {
+      "state": "run_extended",
+      "file": "v2/11-run-extended.png",
+      "description": "狂奔伸腿帧"
+    },
+    {
+      "state": "run_tucked",
+      "file": "v2/12-run-tucked.png",
+      "description": "狂奔收腿帧"
+    },
+    {
+      "state": "hard_brake",
+      "file": "v2/13-hard-brake.png",
+      "description": "急刹并甩动屁股"
+    },
+    {
+      "state": "cursor_hug",
+      "file": "v2/14-cursor-hug.png",
+      "description": "长拖后抱住鼠标抗拒"
+    },
+    {
+      "state": "dizzy_tongue",
+      "file": "v2/15-dizzy-tongue.png",
+      "description": "蚊香眼并吐舌"
+    },
+    {
+      "state": "chin_paws",
+      "file": "v2/16-chin-paws.png",
+      "description": "下巴压在前爪上"
+    },
+    {
+      "state": "back_side_eye",
+      "file": "v2/17-back-side-eye.png",
+      "description": "背对主人回头斜眼"
+    },
+    {
+      "state": "head_pet",
+      "file": "cartoon-v1/head-pet-v1/head-pet-loop-01.png",
+      "description": "头部往返抚摸后压耳闭眼享受，持续后主动回蹭，停止时恢复冷漠"
+    },
+    {
+      "state": "head_poke_wary",
+      "file": "cartoon-v1/head-poke-v1/head-poke-01.png",
+      "description": "连续戳头第 1～2 次，斜眼忍耐"
+    },
+    {
+      "state": "head_poke_annoyed",
+      "file": "cartoon-v1/head-poke-v1/head-poke-02.png",
+      "description": "连续戳头第 3～4 次，半飞机耳并后仰"
+    },
+    {
+      "state": "head_poke_block",
+      "file": "cartoon-v1/head-poke-v1/head-poke-03.png",
+      "description": "连续戳头第 5～6 次，完全飞机耳并抬爪警告"
+    },
+    {
+      "state": "head_poke_push",
+      "file": "cartoon-v1/head-poke-v1/head-poke-04.png",
+      "description": "连续戳头第 7～8 次，伸爪推开并举牌；第 9 次咬光标"
+    },
+    {
+      "state": "lick_paw",
+      "file": "cartoon-v1/lick-paw-v1/lick-paw-loop-01.png",
+      "description": "坐下后连续舔爪，4 帧舌头和头部局部循环"
+    },
+    {
+      "state": "scratch_ear",
+      "file": "v2/19-scratch-ear.png",
+      "description": "挠耳朵"
+    },
+    {
+      "state": "chase_tail",
+      "file": "cartoon-v1/chase-tail-v2/chase-tail-loop-01.png",
+      "description": "咬住尾巴连续转圈，12 张等角度帧循环，站立桥接进入和退出"
+    },
+    {
+      "state": "tail_sleep",
+      "file": "v2/21-tail-sleep.png",
+      "description": "把头藏进尾巴睡觉"
+    },
+    {
+      "state": "pancake",
+      "file": "v2/22-pancake.png",
+      "description": "长按压成柴犬饼"
+    }
+  ]
+}

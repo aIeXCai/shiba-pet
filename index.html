@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light" />
+    <title>贱柴桌宠</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <main id="stage" aria-label="贱柴桌宠">
+      <div id="speech" class="speech" aria-live="polite"></div>
+
+      <button id="pet" class="pet state-idle" type="button" aria-label="拖动贱柴">
+        <span id="pet-facing" class="pet-facing">
+          <span id="pet-motion" class="pet-motion">
+            <img
+              id="pet-previous-sprite"
+              class="pet-previous-sprite"
+              draggable="false"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              id="pet-sprite"
+              src="/assets/shiba/sprites/cartoon-v1/01-idle.png"
+              draggable="false"
+              alt="一只眯眼坏笑的胖柴犬"
+            />
+            <span class="dizzy-eyes" aria-hidden="true">＠　＠</span>
+            <span class="tongue-peek" aria-hidden="true"></span>
+            <span class="pet-prop prop-sunglasses" aria-hidden="true">▰</span>
+            <span class="pet-prop prop-phone" aria-hidden="true">📱</span>
+            <span class="pet-prop prop-coffee" aria-hidden="true">☕</span>
+            <span class="pet-prop prop-blanket" aria-hidden="true"></span>
+            <span class="pet-prop prop-sign" aria-hidden="true">别摸了</span>
+            <span class="pet-prop prop-toy" aria-hidden="true">●</span>
+          </span>
+        </span>
+      </button>
+
+      <button id="menu-toggle" class="menu-toggle" type="button" aria-label="打开设置">
+        •••
+      </button>
+
+      <section id="control-panel" class="control-panel" aria-label="桌宠控制面板" hidden>
+        <header>
+          <div>
+            <strong>贱柴控制台</strong>
+            <small id="status-text">正在装作很忙</small>
+          </div>
+          <button id="panel-close" class="icon-button" type="button" aria-label="关闭面板">×</button>
+        </header>
+
+        <div class="quick-actions">
+          <button type="button" data-action="idle">站好</button>
+          <button type="button" data-action="sit">斜眼</button>
+          <button type="button" data-action="head-pet">摸头</button>
+          <button type="button" data-action="head-poke">戳头升级</button>
+          <button type="button" data-action="lick-paw">舔爪</button>
+          <button type="button" data-action="scratch-ear">挠头</button>
+          <button type="button" data-action="chase-tail">转圈</button>
+          <button type="button" data-action="dead">装死</button>
+          <button type="button" data-action="belly">躺平</button>
+        </div>
+
+        <label class="setting-row">
+          <span>体型</span>
+          <input id="size-control" type="range" min="50" max="110" value="78" />
+        </label>
+
+        <label class="setting-row">
+          <span>欠揍程度</span>
+          <span class="range-with-value">
+            <input id="mockery-control" type="range" min="0" max="100" value="88" />
+            <output id="mockery-value" for="mockery-control">88 · 欠收拾</output>
+          </span>
+        </label>
+
+        <label class="setting-row">
+          <span>始终置顶</span>
+          <input id="always-on-top" type="checkbox" checked />
+        </label>
+
+        <div class="personality">
+          <span>心情 <b id="mood-value">得意</b></span>
+          <span>记仇 <b id="grudge-value">0</b></span>
+        </div>
+
+        <button id="quit-button" class="quit-button" type="button">让它下班</button>
+      </section>
+    </main>
+  </body>
+</html>
